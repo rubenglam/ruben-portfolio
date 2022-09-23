@@ -1,0 +1,24 @@
+---
+const { title = '<RubenGlam />' } = Astro.props;
+---
+
+<header class="p-6">
+	<nav id="navbar">
+		<div class="flex justify-between w-full">
+			<a class="text-white font-bold text-xl tracking-wider hover:underline underline-offset-8" href="/">{title}</a>
+			<div class="absolute top-0 right-0 p-5 px-10">
+				<ul class="flex flex-row font-semibold gap-8">
+					<li>
+						<a class="hover:opacity-80 text-white cursor-pointer" href="#about-me">Sobre mí</a>
+					</li>
+					<li>
+						<a class="hover:opacity-80 text-white cursor-pointer" href="#experience">Experiencia</a>
+					</li>
+					<li>
+						<a class="hover:opacity-80 text-white cursor-pointer" href="#more">Más</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
