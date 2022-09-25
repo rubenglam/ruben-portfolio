@@ -1,7 +1,7 @@
 ---
 import '../../styles.css';
 
-const { dark = true, title = 'Ruben Bermudez - Portfolio', description = 'Este es mi porfolio y solo mio! :D' } = Astro.props;
+const { title = 'Ruben Bermudez - Portfolio', description = 'Este es mi porfolio y solo mio! :D' } = Astro.props;
 ---
 
 <html lang="es">
@@ -32,7 +32,7 @@ const { dark = true, title = 'Ruben Bermudez - Portfolio', description = 'Este e
 		<meta name="twitter:image" content={image} /> -->
 
 	<!-- <script src="https://cdn.usefathom.com/script.js" data-site="RCIEAOAU" defer></script> -->
-	<body>
+	<body class="">
 		<slot />
 	</body>
 </html>
