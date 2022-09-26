@@ -158,3 +158,19 @@ h1 {
 	border-width: 8px 0 8px 16px;
 	border-color: transparent transparent transparent #f45b69;
 }
+
+@keyframes pulse {
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 100;
+	}
+	0% {
+		opacity: 0;
+	}
+}
+
+.animation-pulse-slow {
+	animation: pulse 1.5s linear infinite;
+}
