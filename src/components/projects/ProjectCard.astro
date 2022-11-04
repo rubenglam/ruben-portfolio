@@ -1,0 +1,22 @@
+---
+import { Project } from './Project.astro';
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+const iconClass = project.icon ?? 'bi bi-app';
+---
+
+<div class="relative border border-slate-700 rounded-md p-4 flex justify-start w-1/2">
+	<i class={`${iconClass} text-slate-900 text-2xl`}></i>
+	<div class="ml-4 pb-2">
+		<p class="text-2xl font-medium">{project.title}</p>
+		{project.subtitle && <p class="italic mt-1">{project.subtitle}</p>}
+		<p class="text-sm mt-4">{project.description}</p>
+	</div>
+	<div class="absolute top-1 right-2">
+		{project.externalLink && <a class="bi bi-github text-xl cursor-pointer text-slate-900" href={project.externalLink} target="_blank" />}
+	</div>
+</div>

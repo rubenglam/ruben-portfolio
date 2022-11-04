@@ -1,0 +1,17 @@
+---
+import { Technologie } from './Technologies.astro';
+
+interface Props {
+	technologie: Technologie;
+}
+
+const { technologie } = Astro.props;
+---
+
+<div class="border p-8 border-slate-900 rounded-md">
+	<div class="h-40 py-10">
+		<img class="w-40 m-auto align-middle" src={technologie.icon} />
+	</div>
+	<p class="text-4xl font-medium my-5 text-center">{technologie.title}</p>
+	<p class="text-center">{technologie.description}</p>
+</div>

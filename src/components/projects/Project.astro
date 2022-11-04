@@ -1,0 +1,36 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+export interface Project {
+	icon?: string;
+	title: string;
+	subtitle?: string;
+	description: string;
+	externalLink?: string;
+}
+
+const projects: Project[] = [
+	{
+		title: 'Visamic',
+		description: 'description',
+	},
+	{
+		title: 'TeeChart Demo',
+		description: 'Demo des',
+	},
+	{
+		icon: 'bi bi-discord',
+		title: 'Glamy',
+		subtitle: 'A discord bot',
+		description: 'Bot para la aplicación de Discord que permite reproducir música de fuentes como Youtube o Spotify',
+		externalLink: 'https://github.com/rubenglam/musicglam',
+	},
+];
+---
+
+<section id="project" class="py-10 pb-32 px-40">
+	<span class="text-5xl text-left text-slate-800 font-semibold">Proyectos</span>
+	<div class="flex justify-center mt-20 gap-10">
+		{projects.map(item => <ProjectCard project={item} />)}
+	</div>
+</section>

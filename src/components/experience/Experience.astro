@@ -1,33 +1,42 @@
 ---
+import ExperienceListItem from './ExperienceListItem.astro';
+
+export interface Experience {
+	time: string;
+	title: string;
+	description: string;
+}
+
+const experienceItems: Experience[] = [
+	{
+		time: '1934',
+		title: 'Steema Software S.L.',
+		description: 'Desarrollador web',
+	},
+	{
+		time: '1937',
+		title: 'Steema Software S.L.',
+		description:
+			'Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi.',
+	},
+	{
+		time: '1940',
+		title: 'Steema Software S.L.',
+		description: 'Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.',
+	},
+	{
+		time: '1944',
+		title: 'Steema Software S.L.',
+		description: 'In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.',
+	},
+];
 ---
 
 <section id="experience" class="py-10 px-40">
 	<span class="text-5xl text-center text-slate-800 font-semibold">Experiencia</span>
 	<div class="timeline">
 		<ul>
-			<li>
-				<div>
-					<time><b>1934</b></time>
-					<span>Steema Software S.L.</span>
-					<p>Desarrollador web</p>
-				</div>
-			</li>
-			<li>
-				<div>
-					<time>1937</time> Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in,
-					pretium non nisi.
-				</div>
-			</li>
-			<li>
-				<div>
-					<time>1940</time> Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.
-				</div>
-			</li>
-			<li>
-				<div>
-					<time>1943</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-				</div>
-			</li>
+			{experienceItems.map(item => <ExperienceListItem experience={item} />)}
 		</ul>
 	</div>
 </section>

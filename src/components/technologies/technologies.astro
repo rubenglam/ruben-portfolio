@@ -1,14 +1,34 @@
 ---
-const reactUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png';
-const angularUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png';
-const netUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png';
+import TechnologieCard from './TechnologieCard.astro';
+
+export interface Technologie {
+	icon?: string;
+	title: string;
+	description: string;
+}
+
+const technologies: Technologie[] = [
+	{
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png',
+		title: 'React',
+		description: 'React description',
+	},
+	{
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png',
+		title: '.NET',
+		description: '.NET description',
+	},
+	{
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png',
+		title: 'Angular',
+		description: 'Angular description',
+	},
+];
 ---
 
 <section id="technologies" class="py-10 pb-32 px-40">
 	<span class="text-5xl text-left text-slate-800 font-semibold">Technologies</span>
-	<div class="flex justify-center mt-20 gap-40">
-		<img class="w-40" src={reactUrl} />
-		<img class="w-40" src={angularUrl} />
-		<img class="w-40" src={netUrl} />
+	<div class="grid grid-cols-3 gap-x-4 mt-20">
+		{technologies.map(item => <TechnologieCard technologie={item} />)}
 	</div>
 </section>
