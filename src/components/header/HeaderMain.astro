@@ -1,21 +1,19 @@
 ---
-import HeaderSocials from "./HeaderSocials.astro";
+import HeaderSocials from './HeaderSocials.astro';
 
-const yatchImgUrl = "/assets/yacht.jpg";
+const yatchImgUrl = '/assets/yacht.jpg';
 ---
 
-<div class="flex py-32 px-40">
-  <div class="mx-10">
-    <p class="text-7xl text-white font-medium">Buenas,</p>
-    <p class="text-7xl text-white font-medium mt-4">
-      Soy RubenGlam 
-			<span
-        class="ml-2 border-l-4 border-white animation-pulse-slow rounded-sm"
-      ></span>
+<div class="flex py-40 px-40">
+	<div class="mx-10">
+		<p class="text-7xl text-white font-medium">Buenas,</p>
+		<p class="text-7xl text-white font-medium mt-4">
+			Soy RubenGlam
+			<span class="ml-2 border-l-4 border-white animation-pulse-slow rounded-sm"></span>
 		</p>
-    <HeaderSocials />
-  </div>
-  <div class="ml-auto text-white">
-    <img loading="lazy" src={yatchImgUrl} class="w-40 rounded -rotate-12 transition-all hover:rotate-12" />
-  </div>
+		<HeaderSocials />
+	</div>
+	<div class="ml-auto text-white">
+		<img loading="lazy" src={yatchImgUrl} class="w-40 rounded -rotate-12 transition-all hover:rotate-12" />
+	</div>
 </div>

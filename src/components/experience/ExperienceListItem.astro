@@ -10,8 +10,10 @@ const { experience } = Astro.props;
 
 <li class="list-none relative bg-slate-800 pt-16 w-2 my-0 mx-auto after:absolute">
 	<div class="relative rounded-md bottom-0 p-4 text-white w-96 bg-slate-900">
-		<time><b>{experience.time}</b></time>
-		<span>{experience.title}</span>
-		<p>{experience.description}</p>
+		<div class="flex justify-between">
+			<span class="text-xl">{experience.title}</span>
+			<time class="text-sm"><b>{experience.time}</b></time>
+		</div>
+		<p class="mt-4 text-sm">{experience.description}</p>
 	</div>
 </li>

@@ -10,9 +10,11 @@ import Project from '../components/projects/Project.astro';
 
 <Layout>
 	<Header />
-	<AboutMe />
-	<Experience />
-	<Technologies />
-	<Project />
+	<div class="grid grid-rows-4 grid-cols-2 gap-4">
+		<AboutMe />
+		<Experience />
+		<Technologies />
+		<Project />
+	</div>
 	<Footer />
 </Layout>
