@@ -1,14 +1,8 @@
 ---
+import type { Experience } from '@/types'
 import SectionContainer from '../ui/SectionContainer.astro'
 import SectionTitle from '../ui/SectionTitle.astro'
 import ExperienceItem from './ExperienceItem.astro'
-
-export interface Experience {
-  time: string
-  title: string
-  description: string
-  logo?: string
-}
 
 const experienceItems: Experience[] = [
   {

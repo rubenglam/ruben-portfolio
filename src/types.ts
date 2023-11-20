@@ -14,6 +14,13 @@ export interface Technologie {
   items?: string[]
 }
 
+export interface Experience {
+  time: string
+  title: string
+  description: string
+  logo?: string
+}
+
 export enum TechnologieType {
   JavaScript,
   TypeScript,
