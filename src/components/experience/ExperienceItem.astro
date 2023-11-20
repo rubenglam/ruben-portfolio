@@ -1,0 +1,22 @@
+---
+import { Experience } from './Experience.astro';
+
+interface Props {
+	experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+
+<div class="shadow-md flex border p-8 rounded-lg gap-8">
+	<div class="bg-white rounded-full">
+		<img src={experience.logo} alt={experience.title} class="aspect-square w-16 rounded-lg" />
+	</div>
+	<div class="flex flex-col justify-between">
+		<div class="flex justify-between">
+			<span class="text-2xl font-semibold">{experience.title}</span>
+			<time class="text-sm"><b>{experience.time}</b></time>
+		</div>
+		<p class="mt-4 text-md">{experience.description}</p>
+	</div>
+</div>

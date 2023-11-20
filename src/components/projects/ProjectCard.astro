@@ -1,22 +1,43 @@
 ---
-import { Project } from './Project.astro';
+import { TechnologieType, type Project } from '@/types'
+import TechnologieChip from '../ui/TechnologieChip.astro'
 
 interface Props {
-	project: Project;
+  project: Project
 }
 
-const { project } = Astro.props;
-const iconClass = project.icon ?? 'bi bi-app';
+const { project } = Astro.props
+const iconClass = project.icon ?? 'bi bi-app'
+
+const techologies = project.items?.map(item => {
+  const name = TechnologieType[item]
+
+  return {
+    name,
+    value: item
+  }
+})
 ---
 
-<div class="relative border border-slate-700 rounded-md p-4 flex justify-start w-1/2">
-	<i class={`${iconClass} text-slate-900 text-2xl`}></i>
-	<div class="ml-4 pb-2">
-		<p class="text-2xl font-medium">{project.title}</p>
-		{project.subtitle && <p class="italic mt-1">{project.subtitle}</p>}
-		<p class="text-sm mt-4">{project.description}</p>
-	</div>
-	<div class="absolute top-1 right-2">
-		{project.externalLink && <a class="bi bi-github text-xl cursor-pointer text-slate-900" href={project.externalLink} target="_blank" />}
-	</div>
+<div class='relative border shadow-md rounded-lg p-4 flex gap-4 justify-start'>
+  <i class={`${iconClass} text-slate-900 text-2xl`}></i>
+  <div class='flex flex-col justify-between gap-4 pb-2'>
+    <div class='flex flex-col justify-between gap-6'>
+      <div>
+        <p class='text-2xl font-medium'>{project.title}</p>
+      </div>
+      <div>
+        <p class='text-sm'>{project.description}</p>
+      </div>
+      <div>
+        <p class='text-sm'><b>Rol:</b> {project.role}</p>
+      </div>
+    </div>
+    <div class='flex gap-1'>
+      {techologies?.map(({ name, value }) => <TechnologieChip technologie={value}>{name}</TechnologieChip>)}
+    </div>
+  </div>
+  <div class='absolute top-1 right-2'>
+    {project.externalLink && <a class='bi bi-github text-xl cursor-pointer text-slate-900' href={project.externalLink} target='_blank' />}
+  </div>
 </div>

@@ -1,19 +1,25 @@
 ---
-const rubenProfileImgSrc = '/assets/ruben-profile.jpg';
+import SectionContainer from '../ui/SectionContainer.astro'
+import SectionTitle from '../ui/SectionTitle.astro'
+
+const rubenProfileImgSrc = '/assets/ruben-profile.jpg'
 ---
 
-<section id="sobre-mi" class="py-10 mt-10 px-40">
-	<span class="text-5xl text-left text-slate-800 font-semibold">Sobre Mí</span>
-	<div class="flex justify-between p-20 gap-20 border">
-		<div>
-			<img src={rubenProfileImgSrc} alt="Una foto de mí mismo" loading="lazy" class="aspect-square w-2/3 object-contain rounded-lg" />
-		</div>
-		<div class="text-justify">
-			<p class="text-lg">
-				Mi nombre es Rubén Bermúdez Sáez y soy de Girona, España. Soy desarrollador Full Stack des de hace 4 años. Estudien un ciclo superior de desarrollo multiplataforma y cuando
-				empezé a trabajar me fui especializando más al desarrollo Web que era lo que realmente me apasionaba. A parte de programar: me gustan muchos los videojuegos y todo lo
-				relacionado con el mundo tecnologico, hacer ejercicio y salir a pasear, juegos de mesa, entre muchas otras cosas...
-			</p>
-		</div>
-	</div>
+<section id='about-me' class='flex flex-col gap-8'>
+  <SectionTitle title='Sobre Mí' />
+  <SectionContainer>
+    <div>
+      <img src={rubenProfileImgSrc} alt='Una foto de mí mismo' loading='lazy' class='w-2/3 object-contain rounded-lg' />
+    </div>
+    <div>
+      <p class='text-xl'>
+        Mi nombre es Rubén Bermúdez Sáez y soy de Girona, España. Soy desarrollador Full Stack desde hace 4 años.
+      </p>
+      <br />
+      <p class='text-xl'>
+        Estudie un ciclo superior de desarrollo multiplataforma y cuando
+        empecé a trabajar me fui especializando más al desarrollo Web que era lo que realmente me apasionaba. Aparte de programar: me gustan muchos los videojuegos y estar al dia con las últimas novedades tecnológias, hacer ejercicio y salir a pasear, juegos de mesa, entre muchas otras cosas...
+      </p>
+    </div>
+  </SectionContainer>
 </section>

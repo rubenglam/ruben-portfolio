@@ -1,17 +1,19 @@
 ---
-import { Technologie } from './Technologies.astro';
+import { Technologie } from './Technologies.astro'
 
 interface Props {
-	technologie: Technologie;
+  technologie: Technologie
 }
 
-const { technologie } = Astro.props;
+const { technologie } = Astro.props
 ---
 
-<div class="border p-8 border-slate-900 rounded-md">
-	<div class="h-40 py-10">
-		<img class="w-40 m-auto align-middle" src={technologie.icon} />
-	</div>
-	<p class="text-4xl font-medium my-5 text-center">{technologie.title}</p>
-	<p class="text-center">{technologie.description}</p>
+<div class='flex flex-col border shadow-md rounded-lg p-8'>
+  <div class='flex flex-col justify-between h-36'>
+    <img class='w-12 m-auto align-middle' src={technologie.icon} />
+    <p class='text-2xl font-medium my-5 text-center'>{technologie.title}</p>
+  </div>
+  <div class='flex flex-col text-md'>
+    {technologie.description}
+  </div>
 </div>

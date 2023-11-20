@@ -1,20 +1,22 @@
 ---
-import Layout from '../layouts/base.astro';
-import Footer from '../components/footer/Footer.astro';
-import Header from '../components/header/Header.astro';
-import AboutMe from '../components/about-me/AboutMe.astro';
-import Experience from '../components/experience/Experience.astro';
-import Technologies from '../components/technologies/Technologies.astro';
-import Project from '../components/projects/Project.astro';
+import Layout from '../layouts/base.astro'
+import Footer from '../components/footer/Footer.astro'
+import Header from '../components/header/Header.astro'
+import AboutMe from '../components/about-me/AboutMe.astro'
+import Experience from '../components/experience/Experience.astro'
+import Technologies from '../components/technologies/Technologies.astro'
+import Projects from '../components/projects/Projects.astro'
+import Contact from '../components/contact/Contact.astro'
 ---
 
 <Layout>
-	<Header />
-	<div class="grid grid-rows-4 grid-cols-2 gap-4">
-		<AboutMe />
-		<Experience />
-		<Technologies />
-		<Project />
-	</div>
-	<Footer />
+  <Header />
+  <div class='container m-auto flex flex-col gap-32 my-20'>
+    <AboutMe />
+    <Experience />
+    <Technologies />
+    <Projects />
+    <Contact />
+  </div>
+  <Footer />
 </Layout>

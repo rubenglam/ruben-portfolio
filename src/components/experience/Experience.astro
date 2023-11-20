@@ -1,26 +1,28 @@
 ---
-import ExperienceListItem from './ExperienceListItem.astro';
+import SectionContainer from '../ui/SectionContainer.astro'
+import SectionTitle from '../ui/SectionTitle.astro'
+import ExperienceItem from './ExperienceItem.astro'
 
 export interface Experience {
-	time: string;
-	title: string;
-	description: string;
+  time: string
+  title: string
+  description: string
+  logo?: string
 }
 
 const experienceItems: Experience[] = [
-	{
-		time: '2018-Actualidad',
-		title: 'Steema Software S.L.',
-		description: 'Desarrollador Web y Mobil tanto backend como frontend',
-	},
-];
+  {
+    time: '2018-Actualidad',
+    title: 'Steema Software S.L.',
+    description: 'Empresa de software especializada en la creación de componentes gráficos para la visualización de datos. Accedí a la empresa como estudiante y actualmente soy desarrollador full-stack tanto en el desarollo de aplicaciones web como en aplicaciones móviles.',
+    logo: 'https://media.licdn.com/dms/image/C4D0BAQGn6sBUsKj35g/company-logo_200_200/0/1620136121254/steema_software_logo?e=2147483647&v=beta&t=W2Pbhot4j4XSFHiNXl3ef-AgYj3pLVzjSYGTvMdAubE'
+  }
+]
 ---
 
-<section id="experience" class="py-10 pb-20 px-40">
-	<span class="text-5xl text-center text-slate-800 font-semibold">Experiencia</span>
-	<div class="timeline">
-		<ul>
-			{experienceItems.map(item => <ExperienceListItem experience={item} />)}
-		</ul>
-	</div>
+<section id='experience'>
+  <SectionTitle title='Experiencia' />
+  <SectionContainer>
+    {experienceItems.map(item => <ExperienceItem experience={item} />)}
+  </SectionContainer>
 </section>

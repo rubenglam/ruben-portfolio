@@ -1,0 +1,26 @@
+---
+import { TechnologieType } from '@/types'
+
+interface Props {
+  technologie: TechnologieType
+}
+
+const { technologie } = Astro.props
+
+const technologieStyle = {
+  [TechnologieType.Angular]: 'bg-gray-200 text-gray-700',
+  [TechnologieType.Express]: 'bg-blue-100 text-blue-700',
+  [TechnologieType.JavaScript]: 'bg-yellow-100 text-yellow-700',
+  [TechnologieType.NodeJS]: 'bg-green-100 text-green-700',
+  [TechnologieType.React]: 'bg-red-100 text-red-700',
+  [TechnologieType.TailwindCSS]: 'bg-indigo-100 text-indigo-700',
+  [TechnologieType.TypeScript]: 'bg-gray-100 text-gray-700',
+  [TechnologieType.NET]: 'bg-purple-100 text-purple-700',
+  [TechnologieType.NextJS]: 'bg-gray-100 text-gray-700',
+  [TechnologieType.Astro]: 'bg-rose-100 text-rose-700'
+}[technologie]
+
+const chipStyle = `${technologieStyle} inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase last:mr-0 mr-1`
+---
+
+<span class={chipStyle}><slot /></span>
